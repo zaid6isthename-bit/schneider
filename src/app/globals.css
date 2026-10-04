@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Schneider Electric Official Brand Palette */
+  --schneider-green: #009530;
+  --bright-green: #3DCD58;
+  --seeding-green: #9FAF00;
+
+  --black: #000000;
+  --dark-gray: #262626;
+  --se-dark-gray: #626469;
+  --light-gray: #F2F2F2;
+  --se-light-gray: #9FA0A4;
+  --white: #FFFFFF;
+
+  --accent-yellow: #FFD100;
+  --accent-orange: #E47F00;
+  --accent-blue: #42B4E6;
+  --accent-red: #B10043;
+
+  /* Semantic Theme Ratios:
+     WHITE / LIGHT GRAY  60–70%
+     DARK / BLACK        15–20%
+     SCHNEIDER GREEN     10–15%
+     BRIGHT GREEN        2–5%
+     ACCENT COLORS       <2%
+  */
+  --bg-color: #F2F2F2;
+  --surface-color: #FFFFFF;
+  --surface-hover: #F8F9FA;
+  --accent-color: #009530;
+  --accent-muted: rgba(0, 149, 48, 0.12);
+  --border-color: #E2E4E8;
+  --on-surface: #262626;
+}
+
+body {
+  background-color: #F2F2F2;
+  color: #262626;
+  min-height: 100vh;
+  font-feature-settings: "tnum" 1;
+}
+
+/* Custom Schneider scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F2F2F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #9FA0A4;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #626469;
+}
