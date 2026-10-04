@@ -38,7 +38,7 @@ interface PlaybackState {
 }
 
 export const usePlaybackStore = create<PlaybackState>((set) => ({
-  cursor: cursorFromRealTime(), // Default: sync to actual real time
+  cursor: 75, // Deterministic default step for consistent SSR & hydration
   playing: false,
   realtimeSync: true, // Start in real-time sync mode
   speed: 1,

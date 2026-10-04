@@ -26,20 +26,20 @@ export function EnergyBudgetBar() {
         <span className="font-label-caps text-label-caps uppercase text-on-surface-variant font-bold">
           Daily Energy Budget Pacing
         </span>
-        <span className="font-telemetry-sm text-telemetry-sm font-bold text-secondary">
+        <span suppressHydrationWarning className="font-telemetry-sm text-telemetry-sm font-bold text-secondary">
           STEP {currentStep} / 95
         </span>
       </div>
 
       <div>
         <div className="flex justify-between items-baseline mb-space-2xs">
-          <span className="font-headline-sm text-headline-sm font-bold text-on-surface">
+          <span suppressHydrationWarning className="font-headline-sm text-headline-sm font-bold text-on-surface">
             {Math.round(info.consumedKwh).toLocaleString()}{' '}
             <span className="font-body-sm text-body-sm font-normal text-on-surface-variant">
               kWh consumed
             </span>
           </span>
-          <span className="font-telemetry-sm text-telemetry-sm font-bold text-on-surface-variant">
+          <span suppressHydrationWarning className="font-telemetry-sm text-telemetry-sm font-bold text-on-surface-variant">
             {progressPct.toFixed(1)}% of Budget
           </span>
         </div>

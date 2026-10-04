@@ -27,6 +27,11 @@ export function Header() {
   const runs = useSimulation();
   const ticker = savingsAtStep(runs, cursor);
 
+  // On client mount, perform initial sync to real wall clock
+  useEffect(() => {
+    syncToRealTime();
+  }, [syncToRealTime]);
+
   // Real-time sync: update cursor to actual wall clock every second when not playing
   useEffect(() => {
     if (!realtimeSync || playing) return;
@@ -116,10 +121,10 @@ export function Header() {
               <span className="font-label-caps text-label-caps uppercase text-[#626469] font-bold">
                 ₹ Saved Today:
               </span>
-              <span className="font-telemetry-md text-telemetry-md font-bold text-[#009530]">
+              <span suppressHydrationWarning className="font-telemetry-md text-telemetry-md font-bold text-[#009530]">
                 ₹{Math.round(ticker.cumulativeInr).toLocaleString()}
               </span>
-              <span className="font-telemetry-sm text-telemetry-sm text-white bg-[#009530] px-space-xs py-space-2xs rounded font-bold">
+              <span suppressHydrationWarning className="font-telemetry-sm text-telemetry-sm text-white bg-[#009530] px-space-xs py-space-2xs rounded font-bold">
                 (+₹{ticker.inrPerMin.toFixed(1)}/min)
               </span>
             </div>
@@ -216,10 +221,10 @@ export function Header() {
             {/* Step Time Readout */}
             <div className="flex items-center gap-space-xs px-space-sm py-space-2xs bg-white rounded-lg border border-[#E2E4E8]">
               <span className="material-symbols-outlined text-[16px] text-[#626469]">schedule</span>
-              <span className="font-telemetry-md text-telemetry-md font-bold text-[#262626]">
+              <span suppressHydrationWarning className="font-telemetry-md text-telemetry-md font-bold text-[#262626]">
                 {formattedTime}
               </span>
-              <span className="font-telemetry-sm text-telemetry-sm text-[#626469]">
+              <span suppressHydrationWarning className="font-telemetry-sm text-telemetry-sm text-[#626469]">
                 · Step {stepNumber}/95
               </span>
               {realtimeSync && (

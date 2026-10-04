@@ -44,7 +44,7 @@ export function CostTicker() {
         <span className="font-body-sm text-body-sm text-on-primary-container">
           Cumulative Savings Accrued:
         </span>
-        <div className="font-telemetry-xl text-telemetry-xl font-bold text-secondary-container tracking-tight">
+        <div suppressHydrationWarning className="font-telemetry-xl text-telemetry-xl font-bold text-secondary-container tracking-tight">
           ₹{intPart.toLocaleString()}
           <span className="text-body-lg text-on-primary-container font-normal">.{fracPart}</span>
         </div>
